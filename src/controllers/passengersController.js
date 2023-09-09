@@ -6,7 +6,7 @@ function insert(req, res) {
     res.sendStatus(201)
 }
 
-const passengersControllers = { insert }
+const passengersController = { insert }
 
 
-export default passengersControllers
+export default passengersController
