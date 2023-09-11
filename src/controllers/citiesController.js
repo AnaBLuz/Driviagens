@@ -1,8 +1,8 @@
 import citiesService from "../services/citiesService.js"
 
-function insertCity(req,res){
+async function insertCity(req,res){
   const { name } = req.body;
-  citiesService.insertCity(name);
+  await citiesService.insertCity(name);
   res.sendStatus(201)
 
 }
