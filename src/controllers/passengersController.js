@@ -6,7 +6,13 @@ function insert(req, res) {
     res.sendStatus(201)
 }
 
-const passengersController = { insert }
+async function selectPassenger(req, res){
+    const { nome } = req.query
+    const allPassengers = await passengersService.selectPassenger(nome)
+    res.status(200).send(allPassengers)
+}
+
+const passengersController = { insert, selectPassenger }
 
 
 export default passengersController

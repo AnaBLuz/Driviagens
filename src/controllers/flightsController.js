@@ -6,15 +6,15 @@ function insertFligths(req,res){
     res.sendStatus(201)
 
 }
-async function readFligths(req, res) {
+async function selectFligths(req, res) {
     const {origin, destination, "smaller-date": smaller, "bigger-date": bigger } = req.query
-    const allFlights = await flightsServices.readFligths(origin, destination, smaller, bigger)
+    const allFlights = await flightsService.selectFlights(origin, destination, smaller, bigger)
     return res.status(200).send(allFlights.rows)
 }
 
 
 const flightsController = { 
-    insertFligths
+    insertFligths, selectFligths
 }
 
 export default flightsController
